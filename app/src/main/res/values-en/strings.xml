@@ -10,4 +10,8 @@
     <string name="img">random img</string>
     <string name="checkbox">CheckBox</string>
     <string name="radiobutton">RadioButton</string>
+    <string name="login_button">Login</string>
+    <string name="dialog_message">Are you sure you want to exit?</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
 </resources>
