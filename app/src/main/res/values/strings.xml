@@ -14,4 +14,8 @@
     <string name="ok">Yes</string>
     <string name="cancel">No</string>
     <string name="startchat">Start Chat</string>
+    <string name ="search"></string>
+    <string name="send">Send</string>
+    <string name="outgoingtxt">New Text</string>
+    <string name="incomingtxt">New Text</string>
 </resources>
