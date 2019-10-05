@@ -13,8 +13,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class ChatWindow extends AppCompatActivity {
@@ -22,6 +20,7 @@ public class ChatWindow extends AppCompatActivity {
     EditText search;
     ListView list;
     ArrayList<String> array;
+    ChatAdapter messageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +29,19 @@ public class ChatWindow extends AppCompatActivity {
 
         send = (Button) findViewById(R.id.button4);
         search = (EditText) findViewById(R.id.textView6);
-        list = (ListView) findViewById(R.id.listView);
+        list = (ListView) findViewById(R.id.listview);
+        array = new ArrayList<String>();
+        messageAdapter = new ChatAdapter(this);
 
-        ChatAdapter messageAdapter = new ChatAdapter(this); //unsure about the context
         list.setAdapter(messageAdapter);
 
         send.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String listItem = search.getText().toString();
-                array.add(listItem);
-                messageAdapter.notifyAdapterSetChanged(); //accessed within inner class, needs to be declared final?
-                search.setText(""); //unsure about this
+                array.add(search.getText().toString());
+                messageAdapter.notifyDataSetChanged();
+                search.setText("");
             }
         });
-
-
     }
 
     private class ChatAdapter extends ArrayAdapter<String> {
@@ -66,12 +63,11 @@ public class ChatWindow extends AppCompatActivity {
             View result = null;
             if (position%2 == 0){
                 result = inflater.inflate(R.layout.chat_row_incoming, null);
-            }
-            else{
+            } else{
                 result = inflater.inflate(R.layout.chat_row_outgoing, null);
             }
-            TextView message = (TextView) result.findViewById(R.id.message_text);
-            message.setText(getItem(position));
+            TextView message = (TextView) result.findViewById(R.id.messages);
+            message.setText(getPosition(position));
 
             return result;
         }
