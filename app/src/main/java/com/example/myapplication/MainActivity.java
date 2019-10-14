@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "MainActivity";
     Button ImAButton;
     Button StartChat;
-
+    Button StartToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 9);
                 Log.i(ACTIVITY_NAME, "User clicked Start Chat");
             }
+        });
+
+        StartToolbar = findViewById(R.id.button5);
+
+        StartToolbar.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, TestToolbar.class);
+                startActivityForResult(intent, 8);
+                Log.i(ACTIVITY_NAME, "User clicked Toolbar Test");
+            }
+
         });
     }
 
