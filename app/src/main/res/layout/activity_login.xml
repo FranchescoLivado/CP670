@@ -17,9 +17,9 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:importantForAutofill="no"
         android:inputType="text"
-        android:text="@string/login_name" />
+        android:text="@string/login_name"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textView4"
