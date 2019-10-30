@@ -13,4 +13,15 @@
     <string name="dialog_message">Are you sure you want to exit?</string>
     <string name="ok">Yes</string>
     <string name="cancel">No</string>
+    <string name="startchat">Start Chat</string>
+    <string name="search"></string>
+    <string name="send">Send</string>
+    <string name="outgoingtxt">New Text</string>
+    <string name="incomingtxt">New Text</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+    <string name="tootlbar_test">Toolbar Test</string>
+    <string name="ic_earth">Earth</string>
+    <string name="ic_wind">Wind</string>
+    <string name="ic_fire">Fire</string>
+    <string name="goBack">Do you want to go back?</string>
 </resources>
