@@ -43,7 +43,7 @@ public class WeatherForecast extends AppCompatActivity {
 
     private final String ACTIVITY_NAME = "WeatherForecastActivity";
     ProgressBar progressBar;
-    String urlString = "http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=d99666875e0e51521f0040a3d97d0f6a&mode=xml&units=metric";
+    String urlString = "http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=79cecf493cb6e52d25bb7b7050ff723c&mode=xml&units=metric";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +78,7 @@ public class WeatherForecast extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             try {
-                URL url = new URL(urlString);
+                URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=79cecf493cb6e52d25bb7b7050ff723c&mode=xml&units=metric");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(10000 /* milliseconds */);
                 conn.setConnectTimeout(15000 /* milliseconds */);
@@ -91,6 +91,7 @@ public class WeatherForecast extends AppCompatActivity {
                     XmlPullParser parser = Xml.newPullParser();
                     parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
                     parser.setInput(in, null);
+
                     int type;
                     //While you're not at the end of the document:
                     while((type = parser.getEventType()) != XmlPullParser.END_DOCUMENT)
@@ -187,7 +188,7 @@ public class WeatherForecast extends AppCompatActivity {
             current_temp.setText(currentTemp + "C\u00b0");
             min_temp.setText(minTemp + "C\u00b0");
             max_temp.setText(maxTemp + "C\u00b0");
-            wind_speed.setText(windSpeed + "km/h");
+            //wind_speed.setText(windSpeed + "km/h");
         }
 
         @Override
