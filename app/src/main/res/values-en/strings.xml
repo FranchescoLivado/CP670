@@ -26,4 +26,8 @@
     <string name="ic_wind">Wind</string>
     <string name="ic_fire">Fire</string>
     <string name="goBack">Do you want to go back?</string>
+    <string name="weatherButton">Weather</string>
+    <string name="currentTemp"></string>
+    <string name="minTemp"></string>
+    <string name="maxTemp"></string>
 </resources>
